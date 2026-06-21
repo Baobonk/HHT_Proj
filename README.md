@@ -1,3 +1,3 @@
 # HHT_Proj
-This is a test project made to test out commits, conflict handling and merging
+Updated readme to initiate merging, if you see this in initial commit branch, then the two branch was merged
 
