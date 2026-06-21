@@ -1,0 +1,44 @@
+{
+  "name": "chess-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "socket": "node server/index.js",
+    "dev:all": "concurrently \"npm run dev\" \"npm run socket\"",
+    "dev:socket": "nodemon server/index.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.3.8",
+    "chart.js": "^4.5.1",
+    "chartjs-plugin-zoom": "^2.2.0",
+    "chess.js": "^0.12.0",
+    "dotenv": "^16.4.5",
+    "jsonwebtoken": "^9.0.0",
+    "lucide-react": "^0.556.0",
+    "mongoose": "^8.0.0",
+    "next": "^15.5.7",
+    "nodemailer": "^6.9.7",
+    "react": "^19.0.0",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^19.0.0",
+    "react-hot-toast": "^2.6.0",
+    "react-icons": "^5.5.0",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5",
+    "toast": "^0.5.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.0",
+    "postcss": "^8.0.0",
+    "tailwindcss": "^4.0.0"
+  }
+}

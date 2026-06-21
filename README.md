@@ -1,2 +1,3 @@
 # HHT_Proj
-README for init purposes
+This is a test project made to test out commits, conflict handling and merging
+

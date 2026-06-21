@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+/* Tailwind CSS v4 - Theme Configuration */
+@theme {
+  /* Colors */
+  --color-primary: #4a7ba7;
+  --color-primary-hover: #5a8fb7;
+  --color-secondary: #1e3c72;
+  --color-accent: #facc15;
+  --color-success: #10b981;
+  --color-danger: #dc2626;
+  --color-soft: #a8b5c6;
+
+  /* Background colors */
+  --color-bg-dark: rgba(20, 35, 60, 0.95);
+  --color-bg-card: rgba(15, 23, 42, 0.9);
+  --color-bg-input: rgba(30, 50, 80, 0.8);
+
+  /* Border colors */
+  --color-border-subtle: rgba(100, 150, 200, 0.3);
+  --color-border-accent: rgba(56, 189, 248, 0.6);
+
+  /* Fonts */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  /* Border radius */
+  --radius-card: 15px;
+  --radius-button: 10px;
+
+  /* Shadows */
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 30px rgba(56, 189, 248, 0.35),
+    0 0 80px rgba(129, 140, 248, 0.25);
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-sans);
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1a2a4a 100%);
+  color: #f9fafb;
+  min-height: 100vh;
+}
+
+/* Custom utility classes */
+@utility card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(10px);
+}
+
+@utility btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-button);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 123, 167, 0.4);
+  }
+}
+
+@utility btn-gradient {
+  background: linear-gradient(135deg, #22c55e, #38bdf8);
+  color: white;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5), 0 0 40px rgba(56, 189, 248, 0.4);
+  transition: transform 0.12s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px) scale(1.01);
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.8),
+      0 0 50px rgba(56, 189, 248, 0.7);
+  }
+}
+
+@utility input-field {
+  background-color: var(--color-bg-input);
+  border: 1px solid var(--color-border-subtle);
+  color: #e5e7eb;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  width: 100%;
+
+  &:focus {
+    background-color: rgba(30, 50, 80, 0.9);
+    border-color: #6b9ec9;
+    outline: none;
+    box-shadow: 0 0 0 0.15rem rgba(107, 158, 201, 0.25);
+  }
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* Sparkle animation */
+@keyframes float {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate3d(30px, -80px, 0);
+    opacity: 0;
+  }
+}
+
+.sparkle {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+  animation: float 8s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Chess title gradient */
+.chess-title {
+  background: linear-gradient(120deg, #e0e7ff, #38bdf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+/* Chessboard coordinate styles */
+#myBoard .square-55d63 {
+  position: relative;
+}
+
+#myBoard .square-55d63::before {
+  content: attr(data-rank);
+  position: absolute;
+  left: -20px;
+  top: 4px;
+  font-size: 14px;
+  color: #f5d7a0;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+#myBoard .square-55d63::after {
+  content: attr(data-file);
+  position: absolute;
+  bottom: -20px;
+  right: 4px;
+  font-size: 14px;
+  color: #f5d7a0;
+  font-weight: bold;
+  pointer-events: none;
+}
